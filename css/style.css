@@ -1,89 +1,76 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
 }
 
-.hidden {
-  position: absolute;
-  top: -999999px;
-  opacity: 0;
+ul,
+ol,
+li {
+  list-style: none;
 }
 
-.gallery {
-  width: 400px;
-  height: 500px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+a {
+  text-decoration: none;
 }
-.gallery a img {
+
+#gallery {
+  width: 100%;
+  height: 100vh;
+  background: #000;
+}
+#gallery h1 {
+  font: bold 30px/1 "arial";
+  color: #fff;
+  position: absolute;
+  top: 15vh;
+  left: 5vw;
+  z-index: 5;
+}
+#gallery .shoebox {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#gallery .shoebox img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.gallery button {
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  background: #fff;
+#gallery .controls {
+  width: 60%;
+  padding: 50px;
+  background: rgba(0, 0, 0, 0.7);
   position: absolute;
-  bottom: 5px;
-  right: 5px;
-  z-index: 10;
-  border: none;
-  outline: 0;
-  transition: 0.3s;
+  right: 0;
+  bottom: 20vh;
 }
-.gallery button i {
-  font-size: 25px;
-}
-.gallery.on button {
-  transform: rotate(45deg);
-}
-.gallery div {
-  width: 70%;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 30px;
-  font-family: "Open Sans";
-  color: #fff;
-  z-index: -1;
-  opacity: 0;
-  transition: opactity 0.5s 0.4s;
-}
-.gallery div strong {
-  font-size: 32px;
-  color: #693a2a;
-  display: block;
-}
-.gallery.on div {
-  opacity: 1;
-  z-index: 11;
-}
-.gallery::before, .gallery::after {
+#gallery .controls ul::after {
   content: "";
-  position: absolute;
-  right: 5px;
-  bottom: 5px;
-  width: 55px;
-  height: 55px;
-  border-radius: 100%;
-  transform: scale(0);
+  display: block;
+  clear: both;
 }
-.gallery::before {
-  background: rgba(0, 0, 0, 0.5);
-  transition: all 0.5s;
+#gallery .controls ul li {
+  float: left;
+  margin-right: 20px;
 }
-.gallery::after {
-  background: #e6714a;
-  transition: all 0.5s 0.2s;
+#gallery .controls ul li a {
+  font: bold 12px/1 "arial";
+  color: #777;
 }
-.gallery.on::before, .gallery.on::after {
-  transform: scale(25);
+#gallery .controls ul li.on a {
+  color: #fff;
+}
+#gallery .controls div {
+  margin: 20px;
+  font-size: 14px;
+  color: #888;
+}
+#gallery .controls div strong {
+  font-size: 40px;
+  color: #fff;
 }
 
 /*# sourceMappingURL=style.css.map */
